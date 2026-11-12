@@ -1,0 +1,112 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  test:
+    name: pytest (${{ matrix.os }}, py${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.12", "3.13"]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+
+      - name: Install package and dev tools
+        run: python -m pip install --upgrade pip && pip install -e ".[dev]"
+
+      - name: Run test suite
+        run: pytest -q
+
+  coverage:
+    name: coverage (>= 90%)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install package and dev tools
+        run: python -m pip install --upgrade pip && pip install -e ".[dev]"
+
+      - name: Measure coverage
+        run: >
+          pytest -q
+          --cov=zerobreak
+          --cov-report=term-missing
+          --cov-report=xml
+          --cov-fail-under=90
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-xml
+          path: coverage.xml
+
+  quality:
+    name: lint · types · complexity
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install package and dev tools
+        run: python -m pip install --upgrade pip && pip install -e ".[dev]"
+
+      - name: Lint (ruff)
+        run: ruff check src tests
+
+      - name: Types (mypy)
+        run: mypy src
+
+      - name: Complexity (radon: fail on C or worse)
+        run: radon cc -n C -s src test_cases
+
+  benchmark:
+    name: benchmark (manual)
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install package
+        run: python -m pip install --upgrade pip && pip install -e .
+
+      - name: Run benchmark
+        run: correctorcode bench tienda > docs/benchmarks.md
+
+      - name: Upload benchmark report
+        uses: actions/upload-artifact@v4
+        with:
+          name: benchmarks
+          path: docs/benchmarks.md

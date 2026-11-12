@@ -1,0 +1,162 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1120" height="1120" viewBox="0 0 1120 1120" role="img" aria-label="Flujo y guardas de ZeroBreak" font-family="'Segoe UI', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#484f58"/>
+    </marker>
+  </defs>
+
+  <!-- Fondo -->
+  <rect width="1120" height="1120" fill="#0d1117"/>
+
+  <!-- Cabecera -->
+  <text x="60" y="68" font-size="30" font-weight="700" fill="#e6edf3">ZeroBreak · Flujo y guardas</text>
+  <text x="60" y="100" font-size="16" fill="#8b949e">Ciclo SDD Zero Breakage (5 fases) + guardarraíl mecánico determinista</text>
+  <text x="60" y="136" font-size="12.5" letter-spacing="2" fill="#8b949e">CICLO SDD · 5 FASES</text>
+  <text x="700" y="136" font-size="12.5" letter-spacing="2" fill="#8b949e">GUARDARRAÍL MECÁNICO</text>
+
+  <!-- ================= Columna izquierda: ciclo SDD ================= -->
+
+  <!-- Nodo 1 -->
+  <rect x="60" y="160" width="580" height="64" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="100" cy="192" r="15" fill="#1f6feb"/>
+  <text x="100" y="197" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">1</text>
+  <text x="128" y="187" font-size="16.5" font-weight="600" fill="#e6edf3">Fase 1 · Análisis de contratos</text>
+  <text x="128" y="208" font-size="13" fill="#8b949e">API pública: firmas, excepciones, retornos</text>
+  <line x1="350" y1="224" x2="350" y2="250" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 2 -->
+  <rect x="60" y="250" width="580" height="64" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="100" cy="282" r="15" fill="#1f6feb"/>
+  <text x="100" y="287" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">2</text>
+  <text x="128" y="277" font-size="16.5" font-weight="600" fill="#e6edf3">Fase 2 · Baseline pytest</text>
+  <text x="128" y="298" font-size="13" fill="#8b949e">pytest test_cases/{caso} · foto del estado sano</text>
+  <line x1="350" y1="314" x2="350" y2="340" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 3: decisión -->
+  <rect x="60" y="340" width="580" height="64" rx="14" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+  <circle cx="100" cy="372" r="15" fill="#d29922"/>
+  <text x="100" y="377" font-size="14" font-weight="700" fill="#0d1117" text-anchor="middle">?</text>
+  <text x="128" y="367" font-size="16.5" font-weight="600" fill="#e6edf3">¿Baseline 100% verde?</text>
+  <text x="128" y="388" font-size="13" fill="#8b949e">Sin verde no se continúa</text>
+  <rect x="508" y="349" width="116" height="22" rx="11" fill="#238636" fill-opacity="0.15" stroke="#238636" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="566" y="364" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Sí ▸ continuar</text>
+  <rect x="508" y="373" width="116" height="22" rx="11" fill="#da3633" fill-opacity="0.15" stroke="#da3633" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="566" y="388" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">No ▸ detener</text>
+  <line x1="350" y1="404" x2="350" y2="430" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 4 -->
+  <rect x="60" y="430" width="580" height="64" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="100" cy="462" r="15" fill="#1f6feb"/>
+  <text x="100" y="467" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">3</text>
+  <text x="128" y="457" font-size="16.5" font-weight="600" fill="#e6edf3">Fase 3 · Propuesta</text>
+  <text x="128" y="478" font-size="13" fill="#8b949e">diff + justificación · sin aplicar todavía</text>
+  <line x1="350" y1="494" x2="350" y2="520" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 5 -->
+  <rect x="60" y="520" width="580" height="64" rx="14" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <circle cx="100" cy="552" r="15" fill="#1f6feb"/>
+  <text x="100" y="557" font-size="13" font-weight="700" fill="#ffffff" text-anchor="middle">4</text>
+  <text x="128" y="547" font-size="16.5" font-weight="600" fill="#e6edf3">Fase 4 · Verificación en sandbox</text>
+  <text x="128" y="568" font-size="13" fill="#8b949e">en memoria · sin escribir en disco</text>
+  <line x1="350" y1="584" x2="350" y2="610" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 6: decisión -->
+  <rect x="60" y="610" width="580" height="64" rx="14" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+  <circle cx="100" cy="642" r="15" fill="#d29922"/>
+  <text x="100" y="647" font-size="14" font-weight="700" fill="#0d1117" text-anchor="middle">?</text>
+  <text x="128" y="637" font-size="16.5" font-weight="600" fill="#e6edf3">¿Aprobación humana explícita?</text>
+  <text x="128" y="658" font-size="13" fill="#8b949e">Nada se persiste antes del OK</text>
+  <rect x="508" y="619" width="116" height="22" rx="11" fill="#238636" fill-opacity="0.15" stroke="#238636" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="566" y="634" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Sí ▸ continuar</text>
+  <rect x="508" y="643" width="116" height="22" rx="11" fill="#da3633" fill-opacity="0.15" stroke="#da3633" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="566" y="658" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">No ▸ esperar</text>
+  <line x1="350" y1="674" x2="350" y2="700" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 7: respaldo -->
+  <rect x="60" y="700" width="580" height="64" rx="14" fill="#161b22" stroke="#238636" stroke-width="1.5"/>
+  <circle cx="100" cy="732" r="15" fill="#238636"/>
+  <text x="100" y="736" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">5.1</text>
+  <text x="128" y="727" font-size="16.5" font-weight="600" fill="#e6edf3">5.1 · Respaldo didáctico</text>
+  <text x="128" y="748" font-size="13" fill="#8b949e">modulo_legacy_anotado.py · código original íntegro</text>
+  <line x1="350" y1="764" x2="350" y2="790" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 8: escritura -->
+  <rect x="60" y="790" width="580" height="64" rx="14" fill="#161b22" stroke="#da3633" stroke-width="1.5"/>
+  <circle cx="100" cy="822" r="15" fill="#da3633"/>
+  <text x="100" y="826" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">5.2</text>
+  <text x="128" y="817" font-size="16.5" font-weight="600" fill="#e6edf3">5.2 · Aplicación en disco</text>
+  <text x="128" y="838" font-size="13" fill="#8b949e">apply.apply() · punto único de escritura</text>
+  <text x="624" y="825" font-size="13" font-weight="600" fill="#d29922" text-anchor="end">solo con --yes</text>
+  <line x1="350" y1="854" x2="350" y2="880" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 9: decisión -->
+  <rect x="60" y="880" width="580" height="64" rx="14" fill="#161b22" stroke="#d29922" stroke-width="1.5"/>
+  <circle cx="100" cy="912" r="15" fill="#d29922"/>
+  <text x="100" y="917" font-size="14" font-weight="700" fill="#0d1117" text-anchor="middle">?</text>
+  <text x="128" y="907" font-size="16.5" font-weight="600" fill="#e6edf3">¿pytest post en verde?</text>
+  <text x="128" y="928" font-size="13" fill="#8b949e">Verificación tras aplicar</text>
+  <rect x="508" y="889" width="116" height="22" rx="11" fill="#238636" fill-opacity="0.15" stroke="#238636" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="566" y="904" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">Sí ▸ cerrar</text>
+  <rect x="508" y="913" width="116" height="22" rx="11" fill="#da3633" fill-opacity="0.15" stroke="#da3633" stroke-opacity="0.55" stroke-width="1"/>
+  <text x="566" y="928" font-size="13" font-weight="600" fill="#e6edf3" text-anchor="middle">No ▸ rollback</text>
+  <line x1="350" y1="944" x2="350" y2="970" stroke="#484f58" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Nodo 10: cierre -->
+  <rect x="60" y="970" width="580" height="64" rx="14" fill="#161b22" stroke="#238636" stroke-width="1.5"/>
+  <circle cx="100" cy="1002" r="15" fill="#238636"/>
+  <text x="100" y="1007" font-size="14" font-weight="700" fill="#ffffff" text-anchor="middle">✓</text>
+  <text x="128" y="997" font-size="16.5" font-weight="600" fill="#e6edf3">Cierre</text>
+  <text x="128" y="1018" font-size="13" fill="#8b949e">aprobación + respaldo + suite verde</text>
+
+  <!-- ================= Columna derecha: guardas ================= -->
+
+  <!-- Panel de validaciones de seguridad -->
+  <rect x="700" y="160" width="380" height="440" rx="16" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="724" y="196" font-size="17" font-weight="600" fill="#e6edf3">Validaciones de seguridad</text>
+  <text x="724" y="216" font-size="13" fill="#8b949e">(antes de tocar disco)</text>
+  <line x1="724" y1="230" x2="1056" y2="230" stroke="#30363d" stroke-width="1"/>
+
+  <circle cx="730" cy="256" r="6" fill="#1f6feb"/>
+  <text x="750" y="252" font-size="14.5" font-weight="600" fill="#e6edf3">1 · Archivo propuesto existe</text>
+  <text x="750" y="271" font-size="12.5" fill="#8b949e">apply.plan_apply()</text>
+
+  <circle cx="730" cy="318" r="6" fill="#238636"/>
+  <text x="750" y="314" font-size="14.5" font-weight="600" fill="#e6edf3">2 · Baseline original en verde</text>
+  <text x="750" y="333" font-size="12.5" fill="#8b949e">state.get_entry()</text>
+
+  <circle cx="730" cy="380" r="6" fill="#d29922"/>
+  <text x="750" y="376" font-size="14.5" font-weight="600" fill="#e6edf3">3 · Archivo no fue alterado</text>
+  <text x="750" y="395" font-size="12.5" fill="#8b949e">(SHA-256 idéntico) · state.sha256_file()</text>
+
+  <line x1="724" y1="418" x2="1056" y2="418" stroke="#30363d" stroke-width="1"/>
+  <text x="724" y="440" font-size="12.5" font-weight="600" fill="#8b949e">Post-escritura</text>
+  <text x="724" y="458" font-size="12.5" fill="#8b949e">Rollback automático si pytest sale en rojo</text>
+
+  <circle cx="730" cy="488" r="6" fill="#da3633"/>
+  <text x="750" y="484" font-size="14.5" font-weight="600" fill="#e6edf3">Rollback</text>
+  <text x="750" y="503" font-size="12.5" fill="#8b949e">module.write_bytes(original)</text>
+
+  <line x1="724" y1="528" x2="1056" y2="528" stroke="#30363d" stroke-width="1"/>
+  <text x="724" y="552" font-size="12.5" fill="#8b949e">Escritura solo en apply.apply(),</text>
+  <text x="724" y="570" font-size="12.5" fill="#8b949e">únicamente con --yes.</text>
+
+  <!-- Leyenda -->
+  <rect x="700" y="630" width="380" height="190" rx="16" fill="#161b22" stroke="#30363d" stroke-width="1.5"/>
+  <text x="724" y="666" font-size="17" font-weight="600" fill="#e6edf3">Leyenda</text>
+  <line x1="724" y1="682" x2="1056" y2="682" stroke="#30363d" stroke-width="1"/>
+
+  <circle cx="730" cy="704" r="6" fill="#1f6feb"/>
+  <text x="748" y="708" font-size="13.5" fill="#c9d1d9">Fase / solo lectura</text>
+
+  <circle cx="730" cy="736" r="6" fill="#d29922"/>
+  <text x="748" y="740" font-size="13.5" fill="#c9d1d9">Decisión · guarda</text>
+
+  <circle cx="730" cy="768" r="6" fill="#238636"/>
+  <text x="748" y="772" font-size="13.5" fill="#c9d1d9">Respaldo · cierre</text>
+
+  <circle cx="730" cy="800" r="6" fill="#da3633"/>
+  <text x="748" y="804" font-size="13.5" fill="#c9d1d9">Escritura · rollback</text>
+
+  <!-- Pie -->
+  <text x="1060" y="1092" font-size="12" fill="#484f58" text-anchor="end">ZeroBreak · docs/assets/flow.svg</text>
+</svg>

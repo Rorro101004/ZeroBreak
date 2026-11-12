@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "permissions": [
+    { "action": "edit", "resource": "test_cases/**", "effect": "ask" }
+  ],
+  "mcp": {
+    "codegraph": {
+      "type": "local",
+      "command": [
+        "python",
+        "-m",
+        "codegraph_mcp",
+        "serve",
+        "--repo",
+        "."
+      ],
+      "environment": {
+        "PYTHONUTF8": "1"
+      },
+      "enabled": true
+    }
+  }
+}
