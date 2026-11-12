@@ -127,6 +127,10 @@ Ver [`docs/USER_GUIDE.md`](docs/USER_GUIDE.md) para el tutorial práctico y reso
 - `opencode.json`: la escritura sobre `test_cases/**` requiere aprobación (`edit: ask`), reforzando la Fase 5.
 - `pyproject.toml`: empaquetado, punto de entrada `zerobreak`, dependencias de desarrollo, `testpaths` y ajustes de cobertura.
 
+## Agradecimientos
+
+Desarrollado con la asistencia y colaboración de **Antigravity** (Google DeepMind) y **DeepSeek** como compañeros de pair-programming con IA.
+
 ## Licencia
 
 MIT — ver [LICENSE](LICENSE).

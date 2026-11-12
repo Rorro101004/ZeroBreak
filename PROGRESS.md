@@ -245,4 +245,11 @@
 - **Cambios:** renombrado completo del paquete a `zerobreak` y del producto a **ZeroBreak**; actualización de punto de entrada CLI (`zerobreak = zerobreak.cli:main`), directorio de estado (`.zerobreak/state.json`), cabeceras didácticas y comandos; actualización integral de todas las suites de pruebas y documentación bilingüe.
 - **Estado de tests:** 146 passed; cobertura 100% (816/816 líneas y 240/240 ramas).
 
+### Tarea 037: Agradecimientos y formalización de licencia
+- **Fecha:** 2026-11-12
+- **Archivos:** `LICENSE`, `README.md`, `README.es.md`, `PROGRESS.md`.
+- **Cambios:** sincronización de pull remoto con copyright atribuido a Rorro101004; incorporación de sección de Agradecimientos / Acknowledgements en README bilingüe reconociendo la colaboración de Antigravity (Google DeepMind) y DeepSeek como compañeros de pair-programming.
+- **Estado de tests:** 146 passed; suite 100% verde.
+
+
 
